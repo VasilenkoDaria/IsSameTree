@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool Sym(TreeNode *a, TreeNode* b){
+        if (a == nullptr and b == nullptr){
+            return true;
+        }
+        if(a == nullptr or b == nullptr){
+            return false;
+        }
+    return((a->val==b->val) && Sym(a -> right, b ->left) && Sym(a->left, b->right));
+    }
+    bool isSymmetric(TreeNode* root) {
+        return Sym(root, root);
+    }
+};
